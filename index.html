@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>创建账号</h1>
+            <p class="subtitle">请填写以下信息完成注册</p>
+            
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <div class="input-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" placeholder="请输入用户名" required>
+                    <span class="error-msg" id="usernameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" placeholder="请输入邮箱地址" required>
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">手机号</label>
+                    <input type="tel" id="phone" placeholder="请输入手机号" required>
+                    <span class="error-msg" id="phoneError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码（至少6位）" required>
+                    <span class="error-msg" id="passwordError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" placeholder="请再次输入密码" required>
+                    <span class="error-msg" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="agreement">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">我已阅读并同意 <a href="#">用户协议</a> 和 <a href="#">隐私政策</a></label>
+                </div>
+
+                <button type="submit" class="btn-register">立即注册</button>
+            </form>
+
+            <p class="login-link">已有账号？<a href="#">立即登录</a></p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="modal-icon">✅</div>
+            <h2>注册成功！</h2>
+            <p>欢迎加入我们</p>
+            <button class="btn-register" onclick="closeModal()">确定</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
